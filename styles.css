@@ -16,7 +16,7 @@
   src: url("assets/fonts/PlusJakartaSans-Variable.ttf") format("truetype");
   font-weight: 300 800;
   font-style: normal;
-  font-display: swap;
+  font-display: block;
 }
 
 * { box-sizing: border-box; }
@@ -257,28 +257,43 @@ button, input, select, textarea { font: inherit; }
 
 .pc-menu {
   display: none;
-  width: 44px;
-  height: 44px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: var(--white);
+  width: 32px;
+  height: 32px;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
 }
 
 .pc-menu span {
   display: block;
-  width: 18px;
-  height: 2px;
-  margin: 5px auto;
+  width: 20px;
+  height: 1.5px;
+  margin: 4.5px auto;
   background: var(--ink);
   transition: transform 240ms ease;
 }
 
+.pc-menu::after {
+  display: block;
+  width: 20px;
+  height: 1.5px;
+  margin: 4.5px auto;
+  background: var(--ink);
+  content: "";
+  transition: opacity 180ms ease;
+}
+
 .pc-header.is-open .pc-menu span:first-child {
-  transform: translateY(3.5px) rotate(45deg);
+  transform: translateY(6px) rotate(45deg);
 }
 
 .pc-header.is-open .pc-menu span:last-child {
-  transform: translateY(-3.5px) rotate(-45deg);
+  transform: translateY(0) rotate(-45deg);
+}
+
+.pc-header.is-open .pc-menu::after {
+  opacity: 0;
 }
 
 .hero,
