@@ -45,35 +45,41 @@ button, input, select, textarea { font: inherit; }
   left: 0;
   z-index: 50;
   width: 100%;
-  padding: 10px 16px;
-  transition: padding 220ms ease;
+  border-top: 3px solid var(--ink);
+  border-bottom: 1px solid rgba(20, 24, 31, 0.08);
+  padding: 0 16px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(18px);
+  transition: box-shadow 220ms ease;
 }
 
-.pc-header.is-scrolled { padding-top: 14px; }
+.pc-header.is-scrolled {
+  box-shadow: 0 10px 28px rgba(20, 24, 31, 0.08);
+}
 
 .pc-nav {
   position: relative;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(1120px, 100%);
-  min-height: 62px;
+  width: min(1180px, 100%);
+  min-height: 66px;
   margin: 0 auto;
-  border: 1px solid transparent;
-  border-radius: 12px;
-  padding: 8px 10px 8px 18px;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(18px);
-  transition: box-shadow 220ms ease, border-color 220ms ease, max-width 220ms ease;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  backdrop-filter: none;
+  transition: none;
 }
 
 .home-topline {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 52;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   gap: 24px;
@@ -119,14 +125,8 @@ button, input, select, textarea { font: inherit; }
   height: 14px;
 }
 
-.home-topline + .pc-header {
-  top: 40px;
-}
-
 .pc-header.is-scrolled .pc-nav {
-  max-width: 1120px;
-  border-color: var(--line);
-  box-shadow: 0 18px 40px rgba(20, 24, 31, 0.12);
+  max-width: 1180px;
 }
 
 .pc-brand {
@@ -134,20 +134,20 @@ button, input, select, textarea { font: inherit; }
   align-items: center;
   gap: 10px;
   min-width: 214px;
-  height: 48px;
+  height: 52px;
   overflow: visible;
 }
 
 .pc-brand img {
-  width: 38px;
-  height: 38px;
+  width: 34px;
+  height: 34px;
   object-fit: contain;
 }
 
 .pc-brand > span {
   color: #6a6d72;
-  font-size: clamp(1.25rem, 2vw, 1.55rem);
-  font-weight: 500;
+  font-size: clamp(1.18rem, 1.5vw, 1.36rem);
+  font-weight: 650;
   line-height: 1;
   letter-spacing: -0.03em;
 }
@@ -159,7 +159,7 @@ button, input, select, textarea { font: inherit; }
 .pc-links {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 22px;
 }
 
 .pc-links > a,
@@ -169,18 +169,19 @@ button, input, select, textarea { font: inherit; }
   justify-content: center;
   min-height: 42px;
   border: 0;
-  border-radius: 8px;
-  padding: 0 14px;
-  color: var(--ink);
+  border-radius: 999px;
+  padding: 0;
+  color: rgba(34, 36, 41, 0.68);
   background: transparent;
-  font-size: 0.92rem;
-  font-weight: 650;
+  font-size: 0.84rem;
+  font-weight: 700;
   cursor: pointer;
 }
 
 .pc-links > a:hover,
 .nav-dropdown > button:hover {
-  background: var(--soft);
+  color: var(--ink);
+  background: transparent;
 }
 
 .nav-cta {
@@ -188,7 +189,11 @@ button, input, select, textarea { font: inherit; }
   align-items: center;
   gap: 8px;
   color: var(--white) !important;
-  background: var(--accent) !important;
+  min-height: 38px !important;
+  padding: 0 18px !important;
+  border-radius: 999px !important;
+  background: var(--ink) !important;
+  font-size: 0.84rem !important;
 }
 
 .nav-cta img,
@@ -215,7 +220,7 @@ button, input, select, textarea { font: inherit; }
 
 .dropdown-panel {
   position: absolute;
-  top: calc(100% + 12px);
+  top: calc(100% + 10px);
   left: 50%;
   display: grid;
   width: 310px;
@@ -287,7 +292,7 @@ button, input, select, textarea { font: inherit; }
   display: grid;
   place-items: center;
   min-height: 76vh;
-  padding: 180px clamp(20px, 6vw, 84px) 110px;
+  padding: 138px clamp(20px, 6vw, 84px) 110px;
   overflow: hidden;
   color: var(--white);
   text-align: center;
@@ -765,7 +770,7 @@ h1, h2, h3, p { overflow-wrap: anywhere; }
   display: grid;
   grid-template-columns: minmax(280px, .75fr) minmax(340px, 1.25fr);
   min-height: 360px;
-  padding-top: 98px;
+  padding-top: 76px;
 }
 
 .overview-title {
@@ -1322,7 +1327,7 @@ body:has(link[href="../styles.css"]) .icon-arrow-up-right { --icon: url("../asse
   grid-template-columns: minmax(300px, 0.95fr) minmax(340px, 1.05fr);
   gap: clamp(32px, 7vw, 82px);
   align-items: center;
-  padding: clamp(64px, 8vw, 110px) clamp(20px, 6vw, 84px);
+  padding: clamp(118px, 11vw, 150px) clamp(20px, 6vw, 84px) clamp(64px, 8vw, 110px);
 }
 
 .service-page-media {
