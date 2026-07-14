@@ -8,3 +8,15 @@ output/
 tmp/
 
 .vercel
+
+# Legacy static prototype files kept locally for reference only
+/*.html
+/assets/
+/script.js
+/styles.css
+
+# Unrelated local references
+/xtra-salud-email/
+/xtra-salud-email-reference.png
+/tools/
+/.agents/
