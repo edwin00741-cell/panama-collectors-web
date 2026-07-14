@@ -8,6 +8,7 @@ output/
 tmp/
 
 .vercel
+.env*
 
 # Legacy static prototype files kept locally for reference only
 /*.html
